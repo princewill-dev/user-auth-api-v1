@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
 
 class ApiAuthController extends Controller
@@ -92,17 +93,16 @@ class ApiAuthController extends Controller
 
         // Fetch user by email
         $user = ApiAuth::where('email', $request->email)->first();
-
-        // If user found and password matches
         if ($user && Hash::check($request->password, $user->password)) {
             $token = $user->createToken('authToken')->plainTextToken;
-
+        
+            // Set the token in an HttpOnly cookie
             return response()->json([
                 'success' => true,
-                'user' => $user,
-                'token' => $token
-            ]);
-        } else {
+                'user' => $user
+            ])->withCookie(cookie('authToken', $token, 60, null, null, false, true));  // 60 minutes and HttpOnly
+        } 
+        else {
             return response()->json([
                 'success' => false,
                 'message' => 'Invalid login credentials'
@@ -111,43 +111,28 @@ class ApiAuthController extends Controller
     }
 
 
-    // public function logout() {
-    //     // Get the currently authenticated user
-    //     $user = ApiAuth::user();
-    
-    //     // Revoke the user's token
-    //     $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
-    
-    //     return response()->json(['success' => true, 'message' => 'Logged out successfully']);
-    // }
+    public function checkAuthStatus(Request $request) {
+        // Ensure user is authenticated and token is valid
+        if ($request->user()) {
+            return response()->json([
+                'success' => true,
+                'user' => $request->user()
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Not Authenticated'
+            ], 401);
+        }
+    }
 
-    // public function logout(Request $request) {
-    //     // Get the currently authenticated user
-    //     $user = ApiAuth::user();
-    
-    //     // Revoke the user's token
-    //     $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
-    
-    //     return response()->json(['success' => true, 'message' => 'Logged out successfully']);
-    // }
+
 
     public function logout(Request $request) {
-        // Revoke the user's current token
         $request->user()->currentAccessToken()->delete();
-    
-        // Return a successful response
-        return response()->json(['message' => 'Successfully logged out']);
+        
+        return response()->json(['message' => 'Successfully logged out'])->withCookie(Cookie::forget('authToken'));
     }
-    
-    
-
-
-
-
-
-
-
-
 
 
 

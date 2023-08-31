@@ -25,3 +25,8 @@ Route::post('/register', [ApiAuthController::class, 'register'])->name('register
 Route::post('/login', [ApiAuthController::class, 'login'])->name('login');
 
 Route::post('/logout', [ApiAuthController::class, 'logout'])->name('logout')->middleware(['auth:sanctum']);
+
+Route::get('/check-auth-status', [ApiAuthController::class, 'checkAuthStatus'])->name('checkAuthStatus')->middleware(['auth:sanctum']);
+
+// Route::middleware('auth:sanctum')->get('/check-auth-status', 'ApiAuthController@checkAuthStatus');
+
