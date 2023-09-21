@@ -1,0 +1,510 @@
+<!doctype html>
+<!-- Martex - Software, App, SaaS & Startup Landing Pages Pack design by DSAThemes (http://www.dsathemes.com) -->
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+
+
+
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="DSAThemes">	
+		<meta name="description" content="Martex - Software, App, SaaS & Startup Landing Pages Pack">
+		<meta name="keywords" content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+  		<!-- SITE TITLE -->
+		<title>Martex - Software, App, SaaS & Startup Landing Pages Pack</title>
+							
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+		
+		<!-- BOOTSTRAP CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="css/flaticon.css" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="css/menu.css" rel="stylesheet">	
+		<link id="effect" href="css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
+		<link href="css/magnific-popup.css" rel="stylesheet">	
+		<link href="css/owl.carousel.min.css" rel="stylesheet">
+		<link href="css/owl.theme.default.min.css" rel="stylesheet">
+		<link href="css/lunar.css" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="css/animate.css" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="css/blue-theme.css" rel="stylesheet">
+
+		<!-- Style Switcher CSS -->	
+		<link href="css/crocus-theme.css" rel="alternate stylesheet" title="crocus-theme">	
+		<link href="css/green-theme.css" rel="alternate stylesheet" title="green-theme">
+		<link href="css/magenta-theme.css" rel="alternate stylesheet" title="magenta-theme">
+		<link href="css/pink-theme.css" rel="alternate stylesheet" title="pink-theme">	
+		<link href="css/purple-theme.css" rel="alternate stylesheet" title="purple-theme">
+		<link href="css/skyblue-theme.css" rel="alternate stylesheet" title="skyblue-theme">	
+		<link href="css/red-theme.css" rel="alternate stylesheet" title="red-theme">	
+		<link href="css/violet-theme.css" rel="alternate stylesheet" title="violet-theme">		
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="css/responsive.css" rel="stylesheet">
+	
+
+		<!-- Below are custom JS file that handles API calls -->
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+		<script>
+
+			document.addEventListener('DOMContentLoaded', async function() {
+				try {
+					const response = await fetch('http://127.0.0.1:8000/api/check-auth-status', {
+						method: 'GET',
+						credentials: 'include', // This ensures cookies are sent with the request
+						headers: {
+							'Accept': 'application/json'
+						}
+					});
+
+					const responseData = await response.json();
+
+					if (response.ok && responseData.success) {
+						// Display user data
+						document.getElementById('userEmail').innerText = responseData.user.email;
+						document.getElementById('userName').innerText = responseData.user.name;
+						document.getElementById('userPhone').innerText = responseData.user.phone;
+					} else {
+						// If not authenticated, redirect to login.html
+						window.location.href = 'login.html';
+					}
+				} catch (error) {
+					console.error("Error fetching authentication status:", error);
+					//window.location.href = 'login.html'; // In case of any error, redirect to login
+				}
+			});
+
+		</script>
+
+		
+
+		<!-- custom files ends here -->
+
+	</head>
+
+
+
+
+	<body> 
+
+
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loading" class="loading--theme">
+			<div id="loading-center"><span class="loader"></span></div>
+		</div>
+
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page font--jakarta">
+
+
+
+
+			<!-- HEADER
+			============================================= -->
+			<header id="header" class="tra-menu navbar-dark light-hero-header white-scroll">
+				<div class="header-wrapper">
+
+
+					<!-- MOBILE HEADER -->
+				    <div class="wsmobileheader clearfix">	  	
+				    	<span class="smllogo"><img src="images/logo-blue.png" alt="mobile-logo"></span>
+				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
+				 	</div>
+
+
+				 	<!-- NAVIGATION MENU -->
+				  	<div class="wsmainfull menu clearfix">
+	    				<div class="wsmainwp clearfix">
+
+
+	    					<!-- HEADER BLACK LOGO -->
+	    					<div class="desktoplogo">
+	    						<a href="#hero-5" class="logo-black">
+	    							<img class="light-theme-img" src="images/logo-blue.png" alt="logo">
+	    							<img class="dark-theme-img" src="images/logo-blue-white.png" alt="logo">
+	    						</a>
+	    					</div>
+
+	    					<!-- HEADER WHITE LOGO -->
+	    					<div class="desktoplogo">
+	    						<a href="#hero-5" class="logo-white"><img src="images/logo-blue-white.png" alt="logo"></a>
+	    					</div>
+
+
+	    					<!-- MAIN MENU -->
+	      					<nav class="wsmenu clearfix">
+	        					<ul class="wsmenu-list nav-theme">
+
+
+	        						<!-- DROPDOWN SUB MENU -->
+						          	<li aria-haspopup="true"><a href="#" class="h-link">About <span class="wsarrow"></span></a>
+	            						<ul class="sub-menu">
+	            							<li aria-haspopup="true"><a href="#lnk-1">Why Martex?</a></li>
+	            							<li aria-haspopup="true"><a href="#lnk-2">How It Works</a></li>
+	            							<li aria-haspopup="true"><a href="#features-13">Best Solutions</a></li>
+	            							<li aria-haspopup="true"><a href="#integrations-1">Integrations</a></li>
+	            							<li aria-haspopup="true"><a href="#reviews-1">Testimonials</a></li>	
+						           		</ul>
+								    </li>
+
+
+								    <!-- SIMPLE NAVIGATION LINK -->
+							    	<li class="nl-simple" aria-haspopup="true"><a href="#features-11" class="h-link">Features</a></li>
+
+
+								    <!-- MEGAMENU -->
+						          	<li aria-haspopup="true" class="mg_link"><a href="#" class="h-link">Pages <span class="wsarrow"></span></a>
+	            						<div class="wsmegamenu w-75 clearfix">
+	             							<div class="container">
+	               								<div class="row">
+
+	               									<!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-3 link-list">
+									                    <li class="fst-li"><a href="about.html">About Us</a></li> 
+									                    <li><a href="team.html">Our Team</a></li>
+									                    <li><a href="careers.html">Careers <span class="sm-info">4</span></a></li>
+									                    <li><a href="career-role.html">Career Details</a></li>
+									                    <li><a href="contacts.html">Contact Us</a></li>			     
+									                </ul>
+
+									                <!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-3 link-list">
+	               										<li><a href="features.html">Core Features</a></li>
+									                    <li class="fst-li"><a href="projects.html">Our Projects</a></li>
+									                    <li><a href="project-details.html">Project Details</a></li> 
+									                    <li><a href="reviews.html">Testimonials</a></li>	
+									                    <li><a href="download.html">Download Page</a></li>           
+									                </ul>
+
+									                <!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-3 link-list">
+									                    <li class="fst-li"><a href="pricing-1.html">Pricing Page #1</a></li> 
+									                    <li><a href="pricing-1.html">Pricing Page #2</a></li>
+									                    <li><a href="faqs.html">FAQs Page</a></li>
+									                    <li><a href="help-center.html">Help Center</a></li>
+									                    <li><a href="404.html">404 Page</a></li>		           
+									                </ul>
+
+									               <!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-3 link-list">
+									                    <li class="fst-li"><a href="blog-listing.html">Blog Listing</a></li>
+									                    <li><a href="single-post.html">Single Blog Post</a></li>
+									                    <li><a href="login-2.html">Login Page</a></li>
+									                    <li><a href="signup-2.html">Signup Page</a></li>
+									                    <li><a href="reset-password.html">Reset Password</a></li>			      
+									                </ul>
+                
+								                </div>  <!-- End row -->	
+								            </div>  <!-- End container -->	
+								        </div>  <!-- End wsmegamenu -->	
+								    </li>	<!-- END MEGAMENU -->
+
+
+								    <!-- SIMPLE NAVIGATION LINK -->
+							    	<li class="nl-simple" aria-haspopup="true"><a href="pricing-1.html" class="h-link">Pricing</a></li>
+
+
+						          	<!-- SIMPLE NAVIGATION LINK -->
+							    	<li class="nl-simple" aria-haspopup="true"><a href="faqs.html" class="h-link">FAQs</a></li>
+
+
+							    	<!-- SIGN IN LINK -->
+							    	<li class="nl-simple reg-fst-link mobile-last-link" aria-haspopup="true">
+							    		<a href="login.html" class="h-link">Sign in</a>
+							    	</li>
+
+
+								    <!-- SIGN UP BUTTON -->
+								    <li class="nl-simple" aria-haspopup="true">
+								    	<a href="signup.html" class="btn r-04 btn--theme hover--theme last-link">Sign up</a>
+								    </li> 
+
+
+	        					</ul>
+	        				</nav>	<!-- END MAIN MENU -->
+
+
+	    				</div>
+	    			</div>	<!-- END NAVIGATION MENU -->
+
+
+				</div>     <!-- End header-wrapper -->
+			</header>	
+			<!-- END HEADER -->
+
+
+
+
+			<!-- FAQs-2
+			============================================= -->
+			<section id="faqs-2" class="gr--whitesmoke pb-30 inner-page-hero faqs-section division">				
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-11 col-xl-10">
+
+
+							<!-- INNER PAGE TITLE -->
+							<div class="inner-page-title">
+								<h2 class="s-52 w-700">Hi <span id="userName"></span></h2>
+								<p class="p-lg">Welcome to your dashboard</p>
+							</div>
+
+
+							<center>
+
+								<div id="userEmail"></div>
+								<div id="userName"></div>
+								<div id="userPhone"></div>
+
+								<button class="btn r-04 btn--theme hover--theme last-link" id="logoutButton">Logout</button>
+
+								<script>
+									async function logout() {
+										try {
+											const response = await fetch('http://127.0.0.1:8000/api/logout', {
+												method: 'POST',
+												credentials: 'include', // This ensures cookies are sent with the request
+												headers: {
+													'Accept': 'application/json'
+												}
+											});
+
+											if (response.ok) {
+												// Clear any user data or authentication states from client side
+												sessionStorage.removeItem('user');
+												sessionStorage.removeItem('isLoggedIn');
+												
+												// Redirect the user to login page or homepage
+												window.location.href = 'login.html';
+											} else {
+												console.error("Logout failed:", await response.text());
+											}
+										} catch (error) {
+											console.error("Error during logout:", error);
+										}
+									}
+
+									// This can be bound to a button or any event trigger for logout
+									document.getElementById('logoutButton').addEventListener('click', logout);
+
+								</script>
+
+							</center>	
+
+
+							
+						</div>	
+					</div>	
+				</div>	
+			</section>
+
+
+
+			<!-- FOOTER-3
+			============================================= -->
+			<footer id="footer-3" class="pt-100 footer">
+				<div class="container">
+
+
+					<!-- FOOTER CONTENT -->
+					<div class="row">
+
+
+						<!-- FOOTER LOGO -->
+						<div class="col-xl-3">
+							<div class="footer-info">
+								<img class="footer-logo" src="images/logo-blue.png" alt="footer-logo">
+								<img class="footer-logo-dark" src="images/logo-blue-white.png" alt="footer-logo">
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-md-3 col-xl-2">
+							<div class="footer-links fl-1">
+							
+								<!-- Title -->
+								<h6 class="s-17 w-700">Company</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="about.html">About Us</a></p></li>
+									<li><p><a href="careers.html">Careers</a></p></li>	
+									<li><p><a href="blog-listing.html">Our Blog</a></p></li>							
+									<li><p><a href="contacts.html">Contact Us</a></p></li>			
+								</ul>
+
+							</div>
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-md-3 col-xl-2">
+							<div class="footer-links fl-2">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Product</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="features.html">Integration</a></p></li>
+									<li><p><a href="reviews.html">Customers</a></p></li>	
+									<li><p><a href="pricing-1.html">Pricing</a></p></li>	
+									<li><p><a href="help-center.html">Help Center</a></p></li>			
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-md-3 col-xl-2">
+							<div class="footer-links fl-3">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Legal</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="terms.html">Terms of Use</a></p></li>										
+									<li><p><a href="privacy.html">Privacy Policy</a></p></li>
+									<li><p><a href="cookies.html">Cookie Policy</a></p></li>
+									<li><p><a href="#">Site Map</a></p></li>
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3">
+							<div class="footer-links fl-4">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Connect With Us</h6>
+
+								<!-- Mail Link -->
+								<p class="footer-mail-link ico-25">
+									<a href="mailto:yourdomain@mail.com">hello@yourdomain.com</a>
+								</p>
+
+								<!-- Social Links -->	
+								<ul class="footer-socials ico-25 text-center clearfix">		
+									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
+									<li><a href="#"><span class="flaticon-github"></span></a></li>
+									<li><a href="#"><span class="flaticon-dribbble"></span></a></li>
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+					</div>	<!-- END FOOTER CONTENT -->
+
+
+					<hr>	<!-- FOOTER DIVIDER LINE -->
+
+
+					<!-- BOTTOM FOOTER -->
+					<div class="bottom-footer">
+						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+
+
+							<!-- FOOTER COPYRIGHT -->
+							<div class="col">
+								<div class="footer-copyright"><p class="p-sm">&copy; 2023 Martex. <span>All Rights Reserved</span></p></div>
+							</div>
+
+
+							<!-- FOOTER SECONDARY LINK -->
+							<div class="col">
+								<div class="bottom-secondary-link ico-15 text-end">
+									<p class="p-sm"><a href="https://themeforest.net/user/dsathemes/portfolio">Made with 
+										<span class="flaticon-heart color--pink-400"></span> by @DSAThemes</a>
+									</p>
+								</div>
+							</div>
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- END BOTTOM FOOTER -->
+
+
+				</div>     <!-- End container -->	
+			</footer>
+			<!-- END FOOTER-3 -->	
+
+
+		</div>
+		<!-- END PAGE CONTENT -->	
+
+
+
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="js/jquery-3.7.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>	
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/jquery.easing.js"></script>
+		<script src="js/jquery.appear.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/pricing-toggle.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/request-form.js"></script>	
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="js/jquery.ajaxchimp.min.js"></script>	
+		<script src="js/popper.min.js"></script>
+		<script src="js/lunar.js"></script>
+		<script src="js/wow.js"></script>
+				
+		<!-- Custom Script -->		
+		<script src="js/custom.js"></script>
+
+		<script src="js/changer.js"></script>
+		<script defer src="js/styleswitch.js"></script>	
+
+	</body>
+
+
+
+
+</html>
